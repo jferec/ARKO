@@ -1,6 +1,5 @@
 # ARKO
-Projekty z przedmiotu Architektura Komputerów
-
+Projekty z przedmiotu Architektura Komputerów<br />
 Programowanie niskopoziomowe w architekturze MIPS oraz Intel
 ## MIPS
 ### Circumscribed Triangle
