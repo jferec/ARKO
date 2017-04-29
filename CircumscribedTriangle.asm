@@ -39,7 +39,7 @@ main:
 	syscall
 	
 	move $s0, $v0		#pobrany integer zapisujemy w rejestrze s0 
-	sw $s0, x1		#zapisz pod zmiennπ x1
+	sw $s0, x1		#zapisz pod zmiennƒÖ x1
 	sll $s0, $s0, 8		#zamiana int -> fixed point, scale = 8
 
 	li $v0, 4		#drukowanie
@@ -104,12 +104,12 @@ as1:
 		
 	sub $t0, $s0, $s2	# x1-x2
 	sub $t1, $s3, $s1	# y2-y1
-	sll $t0, $t0, 8		# przesuniÍcie licznika o scale w lewo przed operacjπ dzielenia
+	sll $t0, $t0, 8		# przesuniƒôcie licznika o scale w lewo przed operacjƒÖ dzielenia
 	div $s6, $t0, $t1	# a1 - wspolczynnik nachylenia pierwszej symetralnej (s6)
 
 	add $t0, $s1, $s3	# y1+y2
 	add $t1, $s0, $s2	# x2+x1
-	# przesuniÍcie jednego czynnika o scale w prawo, tam gdzie sπ wspÛ≥rzÍdne, nie tracimy øadnej dok≥adnoúci, zachowujemy dok≥adnoúÊ na wspÛ≥czynniku a, wiÍc nie przesuwamy $s6
+	# przesuniƒôcie jednego czynnika o scale w prawo, tam gdzie sƒÖ wsp√≥≈Çrzƒôdne, nie tracimy ≈ºadnej dok≈Çadno≈õci, zachowujemy dok≈Çadno≈õƒá na wsp√≥≈Çczynniku a, wiƒôc nie przesuwamy $s6
 	sra $t1, $t1, 8
 	mul $t8, $t1, $s6
 	sub $t8, $t0, $t8
@@ -121,13 +121,13 @@ as2:
 
 	sub $t0, $s2, $s4	# x2-x3
 	sub $t1, $s5, $s3	# y3-y2
-	sll $t0, $t0, 8		# przesuniÍcie licznika o scale w lewo przed operacjπ dzielenia
+	sll $t0, $t0, 8		# przesuniƒôcie licznika o scale w lewo przed operacjƒÖ dzielenia
 	div $s7, $t0, $t1	# a2 - wspolczynnik nachylenia drugiej symetralnej (s7)
 
 	
 	add $t0, $s5, $s3	# y2+y3
 	add $t1, $s4, $s2	# x2+x3
-	# przesuniÍcie jednego czynnika o scale w prawo, tam gdzie sπ wspÛ≥rzÍdne, nie tracimy øadnej dok≥adnoúci, zachowujemy dok≥adnoúÊ na wspÛ≥czynniku a, wiÍc nie przesuwamy $s7
+	# przesuniƒôcie jednego czynnika o scale w prawo, tam gdzie sƒÖ wsp√≥≈Çrzƒôdne, nie tracimy ≈ºadnej dok≈Çadno≈õci, zachowujemy dok≈Çadno≈õƒá na wsp√≥≈Çczynniku a, wiƒôc nie przesuwamy $s7
 	sra $t1, $t1, 8
 	mul $t9, $t1, $s7
 	sub $t9, $t0, $t9
@@ -140,13 +140,13 @@ y2_equals_y3:
 
 	sub $t0, $s0, $s4	# x1-x3
 	sub $t1, $s5, $s1	# y3-y1
-	sll $t0, $t0, 8		# przesuniÍcie licznika o scale w lewo przed operacjπ dzielenia
+	sll $t0, $t0, 8		# przesuniƒôcie licznika o scale w lewo przed operacjƒÖ dzielenia
 	div $s7, $t0, $t1	# a3 - wspolczynnik nachylenia trzeciej symetralnej (s7)
 
 	
 	add $t0, $s5, $s1	# y1+y3
 	add $t1, $s4, $s0	# x1+x3
-	# przesuniÍcie jednego czynnika o scale w prawo, tam gdzie sπ wspÛ≥rzÍdne, nie tracimy øadnej dok≥adnoúci, zachowujemy dok≥adnoúÊ na wspÛ≥czynniku a, wiÍc nie przesuwamy $s7
+	# przesuniƒôcie jednego czynnika o scale w prawo, tam gdzie sƒÖ wsp√≥≈Çrzƒôdne, nie tracimy ≈ºadnej dok≈Çadno≈õci, zachowujemy dok≈Çadno≈õƒá na wsp√≥≈Çczynniku a, wiƒôc nie przesuwamy $s7
 	sra $t1, $t1, 8
 	mul $t9, $t1, $s7
 	sub $t9, $t0, $t9
@@ -158,13 +158,13 @@ y1_equals_y2:
 
 	sub $t0, $s2, $s4	# x2-x3
 	sub $t1, $s5, $s3	# y3-y2
-	sll $t0, $t0, 8		# przesuniÍcie licznika o scale w lewo przed operacjπ dzielenia
+	sll $t0, $t0, 8		# przesuniƒôcie licznika o scale w lewo przed operacjƒÖ dzielenia
 	div $s7, $t0, $t1	# a2 - wspolczynnik nachylenia drugiej symetralnej (s7)
 
 	
 	add $t0, $s5, $s3	# y2+y3
 	add $t1, $s4, $s2	# x2+x3
-	# przesuniÍcie jednego czynnika o scale w prawo, tam gdzie sπ wspÛ≥rzÍdne, nie tracimy øadnej dok≥adnoúci, zachowujemy dok≥adnoúÊ na wspÛ≥czynniku a, wiÍc nie przesuwamy $s7
+	# przesuniƒôcie jednego czynnika o scale w prawo, tam gdzie sƒÖ wsp√≥≈Çrzƒôdne, nie tracimy ≈ºadnej dok≈Çadno≈õci, zachowujemy dok≈Çadno≈õƒá na wsp√≥≈Çczynniku a, wiƒôc nie przesuwamy $s7
 	sra $t1, $t1, 8
 	mul $t9, $t1, $s7
 	sub $t9, $t0, $t9
@@ -172,13 +172,13 @@ y1_equals_y2:
 
 	sub $t0, $s0, $s4	# x1-x3
 	sub $t1, $s5, $s1	# y3-y1
-	sll $t0, $t0, 8		# przesuniÍcie licznika o scale w lewo przed operacjπ dzielenia
+	sll $t0, $t0, 8		# przesuniƒôcie licznika o scale w lewo przed operacjƒÖ dzielenia
 	div $s6, $t0, $t1	# a3 - wspolczynnik nachylenia trzeciej symetralnej (s6)
 
 	
 	add $t0, $s5, $s1	# y1+y3
 	add $t1, $s4, $s0	# x1+x3
-	# przesuniÍcie jednego czynnika o scale w prawo, tam gdzie sπ wspÛ≥rzÍdne, nie tracimy øadnej dok≥adnoúci, zachowujemy dok≥adnoúÊ na wspÛ≥czynniku a, wiÍc nie przesuwamy $s6
+	# przesuniƒôcie jednego czynnika o scale w prawo, tam gdzie sƒÖ wsp√≥≈Çrzƒôdne, nie tracimy ≈ºadnej dok≈Çadno≈õci, zachowujemy dok≈Çadno≈õƒá na wsp√≥≈Çczynniku a, wiƒôc nie przesuwamy $s6
 	sra $t1, $t1, 8
 	mul $t8, $t1, $s6
 	sub $t8, $t0, $t8
@@ -188,12 +188,12 @@ circle:
 
 	sub $t0, $t9, $t8 	# b2-b1
 	sub $t1, $s6, $s7	# a1-a2
-	sll $t0, $t0, 8		# przesuniÍcie licznika o scale w lewo przed operacjπ dzielenia
+	sll $t0, $t0, 8		# przesuniƒôcie licznika o scale w lewo przed operacjƒÖ dzielenia
 	div $t4, $t0, $t1	# t4 = Xs - wspolrzedna X srodka okregu
 
 	
 	mul $t0, $s6, $t4
-	sra $t0, $t0, 8 	# przesuniÍcie wyniku mnoøenia o scale w prawo
+	sra $t0, $t0, 8 	# przesuniƒôcie wyniku mno≈ºenia o scale w prawo
 	add $t5, $t0, $t8	# t5 = Ys - wspolrzedna Y srodka okregu
 
 
@@ -210,7 +210,7 @@ circle:
 	li $t3, 0 # i
 	sra $t2, $t0, 1 	#$t2 = n/2
 	
-	beqz $t2, result 	#warunek poczπtkowy pÍtli
+	beqz $t2, result 	#warunek poczƒÖtkowy pƒôtli
 pentla:
  #algorytm Newtona
     	sll $t1, $t0, 8
@@ -218,20 +218,20 @@ pentla:
     	add $t6, $t6, $t1
     	sra $t6, $t6, 1
    	addi $t3, $t3,  256
-   	blt $t3, $t2, pentla	#warunek wyjúcia z pÍtli
+   	blt $t3, $t2, pentla	#warunek wyj≈õcia z pƒôtli
 
 		
-result:	#ZAMIANA Z FIXED POINT DO INT, ORAZ ZAOKR•GLANIE, DRUKOWANIE OBLICZONYCH Xs, Ys, R
+result:	#ZAMIANA Z FIXED POINT DO INT, ORAZ ZAOKRƒÑGLANIE, DRUKOWANIE OBLICZONYCH Xs, Ys, R
 	
-	andi $t0, $t4, 128 # jeúli >= .5 to zaokrπglamy
+	andi $t0, $t4, 128 # je≈õli >= .5 to zaokrƒÖglamy
 	add $t4, $t4, $t0 
 	sra $t4, $t4, 8 #FIXED POINT -> INT Xs
 
-	andi $t0, $t5, 128 # jeúli >= .5 to zaokrπglamy
+	andi $t0, $t5, 128 # je≈õli >= .5 to zaokrƒÖglamy
 	add $t5, $t5, $t0 
 	sra $t5, $t5, 8	# Ys
 
-	andi $t0, $t6, 128 # jeúli >= .5 to zaokrπglamy
+	andi $t0, $t6, 128 # je≈õli >= .5 to zaokrƒÖglamy
 	add $t6, $t6, $t0 
 	sra $t6, $t6, 8 # R
 
@@ -386,7 +386,7 @@ starting_point:
 	move $t8, $t6
 	mul $t1, $t6, $t6# R^2
 	
-	#nie ma warunku wejscia do pÍtli poniewaø zawsze narysujemy jakieú punkty, jeúli R>0
+	#nie ma warunku wejscia do pƒôtli poniewa≈º zawsze narysujemy jakie≈õ punkty, je≈õli R>0
 color_loop:
 	#tutaj bedziemy kolorowac 8 pikseli (x,y) (x, -y) (-x, y) (-x, -y) (y, x) (y, -x) (-y, x) (-y, -x)
 	#s2 = padding + width
@@ -474,19 +474,19 @@ color_loop:
 	
 	
 	#w algorytmie przy inkrementacji X musimy sprawdzic czy powinnismy sie przesunac o 1 piksel w prawo czy po skosie prawo-dol
-	# OBLICZANIE R”WNANIA X^2+Y^2-R^2 DLA PIKSELA PO PRAWEJ
+	# OBLICZANIE R√ìWNANIA X^2+Y^2-R^2 DLA PIKSELA PO PRAWEJ
 	add $t2, $t7, 1 # (x+1)
 	mul $t2, $t2, $t2 # (x+1)^2
 	mul $t3, $t8, $t8# y^2
 	add $s0, $t2, $t3# (x+1)^2 + y^2
 	sub $s0, $s0, $t1# (x+1)^2 + y^2 - R^2
 	
-	# OBLICZANIE R”WNANIA X^2+Y^2-R^2 DLA PIKSELA NA SKOS PRAWO-D”£
+	# OBLICZANIE R√ìWNANIA X^2+Y^2-R^2 DLA PIKSELA NA SKOS PRAWO-D√ì≈Å
 	subi $t3, $t8, 1 # (y-1)
 	mul $t3, $t3, $t3 # (y-1)^2
 	add $s1, $t2, $t3 # (x+1)^2 + (y-1)^2
 	sub $s1, $s1, $t1 # (x+1)^2 + (y-1)^2 - R^2
-	abs $s1, $s1 	#wartoúÊ bezwzglÍdna (poniewaø to rÛwnanie moøe daÊ wynik <0)
+	abs $s1, $s1 	#warto≈õƒá bezwzglƒôdna (poniewa≈º to r√≥wnanie mo≈ºe daƒá wynik <0)
 	
 	blt $s0, $s1, go_right  # s0 < s1, przesuwamy sie w prawo
 
@@ -495,14 +495,14 @@ go_right_down:
 	subi $t8, $t8, 1
 	sub $t0, $t0, $s2
 	addi $t0, $t0, 3 #przesuniecie wskaznika na piksel na ukos prawo-dol
-	blt $t8, $t7, triangle 	#WARUNEK KO—CZ•CY P TLE
+	blt $t8, $t7, triangle 	#WARUNEK KO≈ÉCZƒÑCY PƒòTLE
 	b color_loop
 	
 	
 go_right:
 	addi $t7, $t7, 1
 	addi $t0, $t0, 3 #przesuniecie wskaznika na piksel po prawo
-	blt $t8, $t7, triangle	#WARUNEK KO—CZ•CY P TLE
+	blt $t8, $t7, triangle	#WARUNEK KO≈ÉCZƒÑCY PƒòTLE
 	b color_loop
 	
 	
@@ -515,12 +515,12 @@ triangle:
 	lw $t6, width
 	mul $t6, $t6, 3
 	lw $t3, padding
-	add $t6, $t6, $t3 #jedna linijka bajtÛw (3* width + padding)
+	add $t6, $t6, $t3 #jedna linijka bajt√≥w (3* width + padding)
 	lw $t9, adres_start
 	
 	
-	li $t3, 0		#licznik pomalowanych bokÛw = 0
-	#PRZEJåCIE NA START
+	li $t3, 0		#licznik pomalowanych bok√≥w = 0
+	#PRZEJ≈öCIE NA START
 	subi $t5, $s1, 1	#(y1-1)
 	mul $s4, $t6, $t5	#(y1-1)*(3* width + padding)
 	add $t9, $t9, $s4	#x1
@@ -538,47 +538,47 @@ triangle:
 
 
 loop_begin:
-	ble $t1, $t2, step1     # jeúli x1 <= x2 kx = 3 
-	li $s6, -3		# jeúli x1 > x2	kx = -3
+	ble $t1, $t2, step1     # je≈õli x1 <= x2 kx = 3 
+	li $s6, -3		# je≈õli x1 > x2	kx = -3
 	b step2			
 step1:
-	li $s6, 3		# jeúli x1 <= x2 kx = 3 
+	li $s6, 3		# je≈õli x1 <= x2 kx = 3 
 	
 step2:
-	ble $s1, $s2, step3     #jeúli y1 <= y2 ky = + linijka bajtÛw
-	sub $s7, $zero, $t6	#jeúli y1 > y2 ky - linijka bajtÛw
+	ble $s1, $s2, step3     #je≈õli y1 <= y2 ky = + linijka bajt√≥w
+	sub $s7, $zero, $t6	#je≈õli y1 > y2 ky - linijka bajt√≥w
 	b step4
 step3:
-	add $s7, $zero, $t6	#jeúli y1 <= y2 ky = + linijka bajtÛw
+	add $s7, $zero, $t6	#je≈õli y1 <= y2 ky = + linijka bajt√≥w
 
 step4:
 
 	sub $t5, $t2, $t1	#dx = x2 - x1
-	abs $t5, $t5		#wartoúÊ bezwzglÍdna z dx
+	abs $t5, $t5		#warto≈õƒá bezwzglƒôdna z dx
 
 
 	sub $s0, $s2, $s1	#dy = y2 - y1
-	abs $s0, $s0		#wartoúÊ bezwzglÍdna z dy
+	abs $s0, $s0		#warto≈õƒá bezwzglƒôdna z dy
 
 	
 step5:		
 	
 	li $t7, 0 		#licznik = 0
 	
-	blt $t5, $s0, step6  	#jeúli dx<dy
+	blt $t5, $s0, step6  	#je≈õli dx<dy
 	
-	srl $s4, $t5, 1		#jeúli dx>=dy	e = dx/2 
+	srl $s4, $t5, 1		#je≈õli dx>=dy	e = dx/2 
 	
-	bge $t7, $t5, end_loops	# jeúli licznik >= dx koÒcz pÍtle
+	bge $t7, $t5, end_loops	# je≈õli licznik >= dx ko≈Ñcz pƒôtle
 
 loop1:	
-	add $t9, $t9, $s6        # p = p + kx (przesuwamy siÍ w prawo o kx - 1 piksel), p to adres piksela na ktory wskazujemy
+	add $t9, $t9, $s6        # p = p + kx (przesuwamy siƒô w prawo o kx - 1 piksel), p to adres piksela na ktory wskazujemy
 	sub $s4, $s4, $s0        # e = e - dy (dekrementacja e o dy)
 	
 	
-	bgez $s4, step7	 	#jeúli e>=0
-				#jeúli e<0
-	add $t9, $t9, $s7        # p = p + ky (przesuwamy siÍ o piksel do gÛry)
+	bgez $s4, step7	 	#je≈õli e>=0
+				#je≈õli e<0
+	add $t9, $t9, $s7        # p = p + ky (przesuwamy siƒô o piksel do g√≥ry)
 	add $s4, $s4, $t5        # e = e + dx
 	
 step7:	
@@ -591,24 +591,24 @@ step7:
         addi $t7, $t7, 1	#licznik++
         
         #while
-        blt $t7, $t5, loop1	#jeúli licznik < dx skacz do loop1
-        b end_loops		#jeúli licznik >= dx skacz na koniec
+        blt $t7, $t5, loop1	#je≈õli licznik < dx skacz do loop1
+        b end_loops		#je≈õli licznik >= dx skacz na koniec
         
-step6:	# jeúli dx<dy
+step6:	# je≈õli dx<dy
 
 	srl $s4, $s0, 1		#e = dy/2 
 	
-	bge $t7, $s0, end_loops	#jeúli licznik>= dy skacz na koniec
+	bge $t7, $s0, end_loops	#je≈õli licznik>= dy skacz na koniec
 loop2:
-	add $t9, $t9, $s7       # p = p + ky (piksel do gÛry)
+	add $t9, $t9, $s7       # p = p + ky (piksel do g√≥ry)
 	sub $s4, $s4, $t5       # e = e - dx (dekrementacja o dx)
 	
-	bgez $s4, step8		#jeúli e>=0
-				#jeúli e<0
+	bgez $s4, step8		#je≈õli e>=0
+				#je≈õli e<0
 	add $t9, $t9, $s6 	# p = p + kx 
 	add $s4, $s4, $s0       # e = e + dy
 	
-step8:	# jeúli e>0
+step8:	# je≈õli e>0
 	sb $zero, ($t9)		
 	addi $t9, $t9, 1	
 	sb $zero, ($t9)
@@ -618,26 +618,26 @@ step8:	# jeúli e>0
         addi $t7, $t7, 1	#licznik++
         
 
-        blt $t7, $s0, loop2	#jeúli licznik < dy skacz do loop2
-       				#jeúli licznik >= dy idziesz na koniec
+        blt $t7, $s0, loop2	#je≈õli licznik < dy skacz do loop2
+       				#je≈õli licznik >= dy idziesz na koniec
         
         
 end_loops: 
-	addi $t3, $t3, 1	#inkrementacja licznika pomalowanych bokÛw
+	addi $t3, $t3, 1	#inkrementacja licznika pomalowanych bok√≥w
 	
 				
-	bne $t3, 1, step9	#jeúli licznik jest rÛøny od 1 sprawdü dalej
-				#jeúli licznik jest rÛwny 1 ≥aduj DRUGI BOK
+	bne $t3, 1, step9	#je≈õli licznik jest r√≥≈ºny od 1 sprawd≈∫ dalej
+				#je≈õli licznik jest r√≥wny 1 ≈Çaduj DRUGI BOK
 	lw $t1, x2
 	lw $s1, y2
 	lw $t2, x3
 	lw $s2, y3
 	b loop_begin
 	
-step9:				#jeúli licznik jest rÛøny od 1 sprawdü dalej
+step9:				#je≈õli licznik jest r√≥≈ºny od 1 sprawd≈∫ dalej
  	
- 	bne $t3, 2, zapisz_plik	#jeúli licznik rÛøny od 2 KO—CZ
-				#jeúli licznik jest rÛwny 2 ≥aduj OSTATNI BOK
+ 	bne $t3, 2, zapisz_plik	#je≈õli licznik r√≥≈ºny od 2 KO≈ÉCZ
+				#je≈õli licznik jest r√≥wny 2 ≈Çaduj OSTATNI BOK
 	lw $t1, x3
 	lw $s1, y3
 	lw $t2, x1
