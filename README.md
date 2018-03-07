@@ -10,6 +10,6 @@ Program pobiera od użytkownika współrzędne trójkąta, a następnie rysuje z
 ## INTEL x64
 ### Julia Set
 Mixed C and Assembly. Program draws Julia sets with changable parameters.<br />
-![](https://raw.githubusercontent.com/jferec/ARKO/master/screenshotb.PNG
+![](https://raw.githubusercontent.com/jferec/ARKO/master/screenshotb.PNG)
 
 
