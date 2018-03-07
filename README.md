@@ -5,5 +5,9 @@ Programowanie niskopoziomowe w architekturze MIPS oraz Intel
 ### Circumscribed Triangle
 Program written in MARS (http://courses.missouristate.edu/kenvollmar/mars/)<br />
 Program draws a triangle formed by three (x,y) points got from the user and circumscribes it. Output in BMP file.<br />
-Program pobiera od użytkownika współrzędne trójkąta, a następnie rysuje zadanych trójkąt oraz okrąg opisany na nim w pliku BMP.
+Program pobiera od użytkownika współrzędne trójkąta, a następnie rysuje zadanych trójkąt oraz okrąg opisany na nim w pliku BMP.<br />
+## INTEL x64
+### Julia Set
+Mixed C and Assembly. Program draws Julia sets with changable parameters.
+
 
